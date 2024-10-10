@@ -14,14 +14,14 @@ html, body {
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   font-weight: normal;	
 	background: url(denim.png);
 }
 
 #wrapper {	
   display: grid;
-  grid-template: "main debugger" auto / 1fr 40ch;
+  grid-template: "main debugger" auto / 1fr 50ch;
 	height: 100%;
 }
 

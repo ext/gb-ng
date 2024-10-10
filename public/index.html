@@ -4,93 +4,61 @@
     <title>ng-gb</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="components.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "signal-polyfill": "https://www.unpkg.com/signal-polyfill@0.2.0/dist/index.js"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="wrapper">
       <main>
-				<div class="app">
-        <h1>Awesome application</h1>
+        <div class="app">
+          <h1>Awesome application</h1>
 
-        <div class="input-field">
-          <label for="input1">Awesome input</label>
-          <input type="text" id="input1" data-datapath="foo" value="lorem ipsum" />
-        </div>
+          <div class="input-field">
+            <label for="input1">Awesome input</label>
+            <input
+              type="text"
+              id="input1"
+              data-datapath="foo"
+              value="lorem ipsum"
+            />
+          </div>
 
-        <div class="input-field">
-          <label for="input2">Another input</label>
-          <input type="text" id="input2" data-datapath="bar" />
+          <div class="input-field">
+            <label for="input2">Another input</label>
+            <input type="text" id="input2" data-datapath="bar" />
+          </div>
         </div>
-				</div>
       </main>
 
       <aside id="debugger">
-				<h2>Data layer</h2>
+        <h2>Data layer</h2>
         <table class="datalayer">
           <colgroup>
             <col class="datalayer__expand" />
             <col class="datalayer__datapath" />
+            <col class="datalayer__datatype" />
+            <col class="datalayer__flags" />
             <col class="datalayer__value" />
           </colgroup>
           <thead>
             <tr>
               <th></th>
               <th>Datapath</th>
+              <th>Type</th>
+              <th>F</th>
               <th>Value</th>
             </tr>
           </thead>
-          <tbody>
-            <tr data-datapath="foo">
-							<td class="datalayer__expand"><input type="checkbox"></td>
-              <td class="datalayer__datapath">foo</td>
-              <td>lorem ipsum</td>
-            </tr>
-            <tr data-datapath="foo" class="indent hidden">
-              <td class="datalayer__datapath">foo:value</td>
-              <td>lorem ipsum</td>
-            </tr>
-            <tr data-datapath="foo" class="indent hidden">
-              <td class="datalayer__datapath">foo:valid</td>
-              <td>true</td>
-            </tr>
-            <tr data-datapath="foo" class="indent hidden">
-              <td class="datalayer__datapath">foo:enabled</td>
-              <td>true</td>
-            </tr>
-            <tr data-datapath="bar">
-							<td class="datalayer__expand"><input type="checkbox"></td>
-              <td class="datalayer__datapath">bar</td>
-              <td></td>
-            </tr>
-            <tr data-datapath="bar" class="indent hidden">
-              <td class="datalayer__datapath">bar:value</td>
-              <td></td>
-            </tr>
-            <tr data-datapath="bar" class="indent hidden">
-              <td class="datalayer__datapath">bar:valid</td>
-              <td>true</td>
-            </tr>
-            <tr data-datapath="bar" class="indent hidden">
-              <td class="datalayer__datapath">bar:enabled</td>
-              <td>true</td>
-            </tr>
-            <tr data-datapath="list">
-							<td class="datalayer__expand"><input type="checkbox"></td>
-              <td class="datalayer__datapath">list <span class="badge">Array</span></td>
-              <td>(2 elements)</td>
-            </tr>
-            <tr data-datapath="list" class="indent hidden">
-              <td class="datalayer__datapath">list[0]</td>
-              <td></td>
-            </tr>
-            <tr data-datapath="list" class="indent hidden">
-              <td class="datalayer__datapath">list[1]</td>
-              <td></td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </aside>
     </div>
 
-    <script src="script.js" module></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>

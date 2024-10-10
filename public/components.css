@@ -33,6 +33,18 @@ table.datalayer {
       border: 1px inset #eee;
       padding: 0.25rem;
       vertical-align: top;
+
+			&.datalayer__flags {
+				font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+			}
+
+			&.datalayer__value {
+				font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+				max-width: 12ch;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
     }
   }
 
