@@ -34,17 +34,19 @@ table.datalayer {
       padding: 0.25rem;
       vertical-align: top;
 
-			&.datalayer__flags {
-				font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-			}
+      &.datalayer__flags {
+        font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+          Consolas, "DejaVu Sans Mono", monospace;
+      }
 
-			&.datalayer__value {
-				font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-				max-width: 12ch;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-			}
+      &.datalayer__value {
+        font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+          Consolas, "DejaVu Sans Mono", monospace;
+        max-width: 12ch;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 
@@ -61,7 +63,7 @@ table.datalayer {
 
     input {
       appearance: none;
-			cursor: pointer;
+      cursor: pointer;
       display: inline-block;
       width: 10px;
       height: 10px;
@@ -80,4 +82,24 @@ table.datalayer {
   border-radius: 5px;
   padding: 0.2em 0.5rem;
   margin-left: 4px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #000;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

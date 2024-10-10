@@ -186,3 +186,19 @@ const datalayer = new Datalayer();
     });
   }
 }
+
+setTimeout(() => {
+	const loader = document.querySelector('.loader');
+	const first = document.querySelector('#input1').closest('.input-field');
+	const second = document.querySelector('#input2').closest('.input-field');
+	loader.remove();
+	first.hidden = false;
+	second.hidden = false;
+	const rest = datalayer.ref("rest.something");
+	rest.set("lorem ipsum");
+
+	/* simulare component setup() which would read initial value */
+	const value = datalayer.ref("foo:value");
+	document.querySelector('#input1').value = rest.get();
+	value.set(rest.get());
+}, 1000);
