@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-		"start": "http-server public",
+    "start": "http-server public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -11,6 +11,7 @@
   "description": "",
   "devDependencies": {
     "esbuild": "0.24.0",
-    "http-server": "14.1.1"
+    "http-server": "14.1.1",
+    "prettier": "3.3.3"
   }
 }

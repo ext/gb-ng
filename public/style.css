@@ -9,20 +9,21 @@
   padding: 0;
 }
 
-html, body {
-	height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
-  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-  font-weight: normal;	
-	background: url(denim.png);
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  font-weight: normal;
+  background: url(denim.png);
 }
 
-#wrapper {	
+#wrapper {
   display: grid;
-  grid-template: "main debugger" auto / 1fr 50ch;
-	height: 100%;
+  grid-template: "main debugger" auto / 1fr 60ch;
+  height: 100%;
 }
 
 main {
@@ -30,28 +31,28 @@ main {
 }
 
 .app {
-	max-width: 80ch;
-	width: 100%;
-	margin: 1rem auto;
-	overflow-y: auto;
+  max-width: 80ch;
+  width: 100%;
+  margin: 1rem auto;
+  overflow-y: auto;
 
-	background: #fff;
-	padding: 1rem;
-	border-left: 1px solid red;
+  background: #fff;
+  padding: 1rem;
+  border-left: 1px solid red;
 }
 
 #debugger {
   grid-area: debugger;
-	background: #fff;
+  background: #fff;
 
-	border-left: 5px solid #999;
+  border-left: 5px solid #999;
 
-	h2 {
-		margin: 0;
-		margin-left: -5px;
-		background: #999;
-		padding: 0.25rem;
-		font-size: 1rem;
-		text-transform: uppercase;
-	}
+  h2 {
+    margin: 0;
+    margin-left: -5px;
+    background: #999;
+    padding: 0.25rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
 }

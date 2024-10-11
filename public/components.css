@@ -12,6 +12,21 @@
   }
 }
 
+.radio-field {
+  margin-bottom: 1rem;
+  border: 0;
+
+  legend {
+    display: block;
+    width: 100%;
+  }
+
+  label {
+    display: block;
+    padding: 0.25rem;
+  }
+}
+
 table.datalayer {
   width: 100%;
   border-spacing: 0;
@@ -35,19 +50,22 @@ table.datalayer {
       vertical-align: top;
 
       &.datalayer__flags {
-        font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
-          Consolas, "DejaVu Sans Mono", monospace;
+        font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+        max-width: 3ch;
       }
 
       &.datalayer__value {
-        font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
-          Consolas, "DejaVu Sans Mono", monospace;
-        max-width: 12ch;
+        font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+        max-width: 16ch;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
     }
+  }
+
+  tr.indent {
+    background: aliceblue;
   }
 
   tr.indent .datalayer__datapath {
@@ -101,5 +119,38 @@ table.datalayer {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.messagebox {
+  border: 2px solid transparent;
+  border-left-width: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  strong {
+    margin-bottom: 0.25rem;
+  }
+
+  &.success {
+    border-color: green;
+    background: lightgreen;
+  }
+
+  &.fail {
+    border-color: red;
+    background: lightpink;
+  }
+}
+
+button {
+  padding: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background: #eee;
+  cursor: pointer;
+
+  &:hover {
+    background: #aaa;
   }
 }

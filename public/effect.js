@@ -6,6 +6,7 @@ const w = new Signal.subtle.Watcher(() => {
   if (needsEnqueue) {
     needsEnqueue = false;
     queueMicrotask(processPending);
+    setTimeout(processPending, 100);
   }
 });
 

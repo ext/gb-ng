@@ -15,26 +15,52 @@
   <body>
     <div id="wrapper">
       <main>
-        <div class="app">
-          <h1>Awesome application</h1>
+        <form class="app" onsubmit="onSubmit(event)">
+          <h1>Penning-bidraget</h1>
 
-					<span class="loader"></span>
+          <span class="loader"></span>
+          <p class="loader-text">Vi hämtar dina uppgifter, dröj kvar &hellip;</p>
 
           <div class="input-field" hidden>
-            <label for="input1">Awesome input</label>
-            <input
-              type="text"
-              id="input1"
-              data-datapath="foo"
-              value=""
-            />
+            <label for="input1">Vad heter du?</label>
+            <input type="text" id="input1" data-datapath="foo" value="" />
           </div>
 
           <div class="input-field" hidden>
-            <label for="input2">Another input</label>
-            <input type="text" id="input2" data-datapath="bar" />
+            <label for="input2">Hur många pengar vill du ansöka om?</label>
+            <input type="number" id="input2" data-datapath="bar" />
           </div>
-        </div>
+
+          <fieldset class="radio-field" hidden>
+            <legend>Vill du svara på en extra fråga?</legend>
+            <label><input data-datapath="extra.question1" type="radio" name="extra" value="1" /> Ja, självklart!</label>
+            <label><input data-datapath="extra.question1" type="radio" name="extra" value="0" /> Nej, för bövelen!!</label>
+          </fieldset>
+
+          <fieldset class="radio-field" hidden data-condition="value('extra.question1') === true">
+            <legend>Är du helt säker?</legend>
+            <label><input data-datapath="extra.question2" type="radio" name="extra2" value="1" /> Jajamen!</label>
+            <label><input data-datapath="extra.question2" type="radio" name="extra2" value="0" /> Nej jag ångrar mig.</label>
+          </fieldset>
+
+          <div class="input-field" hidden data-condition="value('extra.question2') === true">
+            <label for="input3">Vad sa den ena snögubben till den andra?</label>
+            <input type="text" id="input3" data-datapath="riddle" />
+          </div>
+
+          <div class="messagebox fail" hidden data-condition="enabled('riddle') && valid('riddle') && value('riddle').toLowerCase() !== 'det luktar morot'">
+            <strong>Fel!</strong>
+            <p>Du svarade fel, inga pengar till dig!</p>
+          </div>
+
+          <div class="messagebox success" hidden data-condition="enabled('riddle') && valid('riddle') && value('riddle').toLowerCase() === 'det luktar morot'">
+            <strong>Rätt!</strong>
+            <p>Bomber och granater! Du svarade rätt!</p>
+            <pre>\o/</pre>
+          </div>
+
+          <button hidden type="submit">Skicka in</button>
+        </form>
       </main>
 
       <aside id="debugger">
